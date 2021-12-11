@@ -1,0 +1,10 @@
+DefaultType  application/x-httpd-php
+AddType application/x-httpd-php .php .html .htm
+php_value short_open_tag 1
+AddDefaultCharset UTF-8
+
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule ^.*$ index.php [L,QSA]
+RewriteRule ^.*$ index.php$1 [L,QSA]
